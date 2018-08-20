@@ -40,11 +40,14 @@ public class Computer implements Player{
 		int size = board.getSize();
 		for(int i = 0 ; i < size; i++) {
 			for(int j = 0; j < size; j++) {
+				//비워 있는 곳에 놔보고
 				if(board.isEmptyBoard(i, j)) {
 					board.setBoard(i, j, 'X');
+					//빙고가 된다면 거기에 놓는다
 					if (board.checkBingo('X')) {
 						return;
 					}
+					//빙고가 아니면 다시 원래대로 돌려놓는다.
 					board.changeBoard(i, j, ' ');
 				}
 			}
@@ -58,12 +61,15 @@ public class Computer implements Player{
 		//상대가 빙고만들만한 곳이 있으면 그곳에 놓는다.
 		for(int i = 0; i < size; i++) {
 			for(int j = 0; j < size; j++) {
+				//비워 있는 곳에 상대의 돌을 놔보고
 				if(board.isEmptyBoard(i, j)) {
 					board.setBoard(i, j, 'O');
+					//빙고가 된다면 막는다
 					if (board.checkBingo('O')) {
 						board.changeBoard(i, j, 'X');
 						return;
 					}
+					//아니면 돌려놓는다.
 					board.changeBoard(i, j, ' ');
 				}
 			}
