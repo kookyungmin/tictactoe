@@ -1,7 +1,5 @@
 package com.gguri.tictactoe;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -38,15 +36,12 @@ public class TicTacToe {
 	//게임 시작 메소드
 	private void playGame() {
 		System.out.println("게임을 시작하겠습니다");
+		board.clear();
 		board.print();
 		boolean isEnd = false;
 		while(!isEnd) {
 			user.drawBoard(board);
-			isEnd = checkWin();
-			if(isEnd) {
-				break;
-			}
-			com.drawBoard(board);
+			System.out.println("<user>");
 			board.print();
 			isEnd = checkWin();
 			if(isEnd) {
@@ -58,9 +53,16 @@ public class TicTacToe {
 				sc.nextLine();
 				break;
 			}
+			System.out.println("<computer>");
+			com.drawBoard(board);
+			board.print();
+			isEnd = checkWin();
+			if(isEnd) {
+				break;
+			}	
 		}
 	}
-	
+
 	
 	//초기화면 실행
 	private int initExec() {

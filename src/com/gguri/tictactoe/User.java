@@ -3,7 +3,7 @@ package com.gguri.tictactoe;
 import java.util.Scanner;
 
 public class User implements Player{
-
+	//사용자 돌을 놓는 메소드
 	@Override
 	public void drawBoard(Board board) {
 		boolean check = false;
@@ -17,7 +17,7 @@ public class User implements Player{
 			}
 		}
 	}
-
+	//좌표 입력 받는 메소드
 	private int getInt(char ch) throws Exception{
 		System.out.println("───────────────────────");
 		System.out.println(ch+"좌표를 입력해 주세요! (0~2)");
@@ -25,6 +25,7 @@ public class User implements Player{
 		System.out.print("입력:");
 		return getInt();
 	}
+	//숫자 입력 받는 메소드
 	private int getInt() {
 		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
