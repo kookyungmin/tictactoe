@@ -10,7 +10,7 @@ public class Computer implements Player{
 			initDrawBoard(board);
 			init = false;
 		}else {
-			defenseBoard(board);
+			attackBoard(board);
 		}
 		
 		
@@ -52,8 +52,8 @@ public class Computer implements Player{
 				}
 			}
 		}
-		//공격할 때 없으면 아무데나 둔다.
-		randomBoard(board);
+		//상대가 빙고 될만한 곳이 있으면 방어한다.
+		defenseBoard(board);
 	}
 	//디펜스 메소드
 	private void defenseBoard(Board board) {
@@ -75,8 +75,8 @@ public class Computer implements Player{
 			}
 		}
 		
-		//상대가 빙고 될만한 곳이 없으면 공격 한다.
-		attackBoard(board);
+		//방어할 때가 없으면 아무데나 둔다.
+		randomBoard(board);
 	}
 	public void setInit(boolean init) {
 		this.init = init;
