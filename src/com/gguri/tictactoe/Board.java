@@ -2,8 +2,9 @@ package com.gguri.tictactoe;
 
 
 public class Board {
-	private char[][] board;
 	private static final int SIZE = 3;
+	private char[][] board;
+	
 	public Board() {
 		board = new char[SIZE][SIZE];
 		
