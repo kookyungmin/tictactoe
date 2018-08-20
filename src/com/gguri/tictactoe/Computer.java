@@ -78,4 +78,7 @@ public class Computer implements Player{
 		//상대가 빙고 될만한 곳이 없으면 공격 한다.
 		attackBoard(board);
 	}
+	public void setInit(boolean init) {
+		this.init = init;
+	}
 }

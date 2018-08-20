@@ -69,6 +69,7 @@ public class TicTacToe {
 		initView();
 		try {
 			int num = getInt();
+			com.setInit(true);
 			return num;
 		}catch(Exception e){
 			return 0;
