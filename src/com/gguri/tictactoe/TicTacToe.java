@@ -19,6 +19,7 @@ public class TicTacToe {
 	public void execute() {
 		while(true) {
 			int ch = initExec();
+			sc.nextLine();
 			switch(ch) {
 			case 1:
 				playGame();
