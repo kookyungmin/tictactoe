@@ -24,6 +24,7 @@ public class Board {
 	}
 	//문자 삽입 메소드 
 	public boolean setBoard(int x, int y, char character) {
+		boolean result = true;
 		try {
 			if(board[x][y] == ' ') {
 				board[x][y] = character;
@@ -35,9 +36,9 @@ public class Board {
 			
 		}catch(Exception e) {
 			System.out.println("잘못입력하셨습니다.");
-			return false;
+			result = false;
 		}
-		return true;
+		return result;
 	}
 	//문자 변경 메소드
 	public void changeBoard(int x, int y, char character) {
@@ -58,26 +59,27 @@ public class Board {
 	
 	//빙고 되었는지 확인
 	public boolean checkBingo(char ch) {
+		boolean result = false;
 		//가로줄 빙고 확인
 		for(int i = 0; i < SIZE; i++) {
 			if(board[i][0] == ch && board[i][1] == ch && board[i][2] == ch) {
-				return true;
+				result = true;
 			}
 		}
 		//세로줄 빙고 확인
 		for(int i = 0; i <SIZE; i++) {
 			if(board[0][i] == ch && board[1][i] == ch && board[2][i] == ch) {
-				return true;
+				result = true;
 			}
 		}
 		//대각선 빙고 확인
 		if(board[0][0] == ch && board[1][1] == ch && board[2][2] == ch) {
-			return true;
+			result = true;
 		}
 		if(board[0][2] == ch && board[1][1] == ch && board[2][0] == ch) {
-			return true;
+			result = true;
 		}
-		return false;
+		return result;
 	}
 	//화면 출력 메소드
 	public void print() {
