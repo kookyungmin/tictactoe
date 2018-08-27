@@ -31,8 +31,8 @@ public class Computer implements Player{
 		//가운데에 아무것도 없다면 가운데에 놓는다.
 		if(board.isEmptyBoard(1, 1)) {
 			board.setBoard(1, 1, 'X');
-		}else { //아니면 아무데나 놓는다.
-			randomBoard(board);
+		}else { //아니면 모서리에 놓는다.
+			board.setBoard(0, 0, 'X');
 		}
 	}
 	//공격 메소드
